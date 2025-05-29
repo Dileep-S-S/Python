@@ -1,13 +1,13 @@
 #brute force
 def consecutive(a,b):
     if a>b:
-        min=a
+        mn=a
     else:
-        min=b
-    while(min!=1):
-        if a%min ==0 & b%min ==0:
-            return min
-        min -=1
+        mn=b
+    while(mn!=1):
+        if a%mn ==0 and b%mn ==0:
+            return mn
+        mn -=1
     return -1
 
 def middleschool(a,b):
@@ -16,10 +16,21 @@ def middleschool(a,b):
     else:
         mn=b
     res=1
-    for i in range(2 ,mn):
-        while(a%i==0 & b%i==0):
+    for i in range(2 ,mn+1):
+        while(a%i==0 and b%i==0):
             res *=i
             a=a/i
             b=b/i
     return res
+
+def euclids(a,b):
+    temp=0
+    while(b!=0):
+        temp=b
+        b=a%b
+        a=temp
+    return a
+
+print(euclids(12,60))
 print(middleschool(12,60))
+print(consecutive(12,60))
