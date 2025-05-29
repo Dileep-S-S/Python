@@ -22,7 +22,7 @@ def middleschool(a,b):
             a=a/i
             b=b/i
     return res
-
+#obtimized
 def euclids(a,b):
     temp=0
     while(b!=0):
